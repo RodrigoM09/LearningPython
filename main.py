@@ -76,3 +76,74 @@ elif BMI <= 35:
     print(f"Your BMI is {BMI}, you are obese.")
 elif BMI > 35:
     print(f"Your BMI is {BMI}, you are clinically obese.")
+
+# Leap year checker ---------->
+year = int(input("Which year do you want to check? "))
+if year % 4 == 0:
+    if year % 100 == 0:
+        if year % 400 ==0:
+            print("Leap year.")
+        else:
+            print("Not a leap year.")    
+    else:
+        print("Leap year.")
+else:
+    print("Not leap year.")
+
+#Pizza ordering ------->
+print("Welcome to Python Pizza Deliveries!")
+size = input("What size pizza do you want? S, M, or L ")
+add_pepperoni = input("Do you want pepperoni? Y or N ")
+extra_cheese = input("Do you want extra cheese? Y or N ")
+
+bill = 0
+
+if size == "S" or size == "s":
+    bill += 15
+elif size == "M" or size == "m":
+    bill += 20
+elif size == "L" or  size == "l":
+    bill += 25 
+
+if add_pepperoni == "Y" or  add_pepperoni == "y":
+    if size == "S" or size == "s":
+        bill += 2
+    else:
+        bill += 3 
+
+if extra_cheese == "Y" or extra_cheese == "y":
+        bill += 1
+
+print(f"Your final bill is ${bill}")
+
+# Love Calculator --------->
+print("Welcome to the Love Calculator!")
+name1 = input("What is your name? \n")
+name2 = input("What is their name? \n")
+
+combined_string = name1.lower() + name2.lower()
+
+t = combined_string.count("t")
+r = combined_string.count("r")
+u = combined_string.count("u")
+e = combined_string.count("e")
+
+true = t + r + u + e
+
+l = combined_string.count("l")
+o = combined_string.count("o")
+v = combined_string.count("v")
+e = combined_string.count("e")
+
+love = l + o + v + e
+
+love_score = int(str(true) + str(love))
+
+if (love_score < 10) or (love_score > 90):
+    print(f"Your love score is {love_score}, you go together like coke and mentos")
+elif (love_score >= 40) and (love_score <= 50):
+    print(f"Your score is {love_score}, you are alright together.")
+else:
+    print(f"Your score is {love_score}")
+
+print(love_score)
