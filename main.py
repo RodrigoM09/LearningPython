@@ -53,3 +53,26 @@ total_bill = bill + total_tip_amount
 bill_per_person = total_bill / people
 final_amount = round(bill_per_person, 2)
 print(final_amount)
+
+# If else Statement ----------->
+number = int(input("Which number do you want to check? "))
+if number % 2 == 0:
+    print("This is an even number.")
+else:
+    print("This is an odd number.")
+
+#BMI Checker(if/elif) ------->
+height = float(input("enter your height in m: "))
+weight = float(input("enter your weight in kg: "))
+# 🚨 Don't change the code above 👆
+BMI = round(weight / height ** 2)
+if BMI <= 18.5:
+    print(f"Your BMI is {BMI}, you are under weight.")
+elif BMI <= 25:
+    print(f"Your BMI is {BMI}, you have a normal weight.")
+elif BMI <= 30:
+    print(f"Your BMI is {BMI}, you are slightly overweight.")
+elif BMI <= 35:
+    print(f"Your BMI is {BMI}, you are obese.")
+elif BMI > 35:
+    print(f"Your BMI is {BMI}, you are clinically obese.")
