@@ -192,3 +192,29 @@ if choice1 == "left":
         print("You got attacked by an agry trout. Game Over")
 else:
     print("You fell into a hole. Game Over.")
+
+
+#Heads or Tails -------------->
+import random 
+
+random_num = random.randint(0,1)
+if random_num == 1:
+    print("Heads")
+else:
+    print("Tails")
+
+#Random name picker ------------>
+import random
+# Split string method
+names_string = input("Give me everybody's names, separated by a comma. ")
+names = names_string.split(", ")
+
+num_items = len(names)
+
+random_choice = random.randint(0, num_items -1)
+
+person = names[random_choice]
+
+print(f"{person} is going to buy the meal today!")
+
+
