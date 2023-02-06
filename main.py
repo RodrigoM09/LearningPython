@@ -1,35 +1,35 @@
-#String length ------------->
+#String length ------------------------------------->
 print(len(input("What is your name? ")))
 
 name = input("What is your name? ")
 length = len(name)
 print(length)
 
-#Band Name Generator --------->
+#Band Name Generator ------------------------------------->
 city = input("What is the name of the city you grew up in?\n")
 
 pet = input("What's your pets name?\n")
 
 bandname = print(city + pet)
 
-#Adding 2 numbers from same input ------>
+#Adding 2 numbers from same input ------------------------------------->
 two_digit_number = input("Type a two digit number: ")
 
 print(int(two_digit_number[0]) + int(two_digit_number[1]))
 
 
-#BMI Calculator --------->
+#BMI Calculator ------------------------------------->
 height = input("enter your height in m: ")
 weight = input("enter your weight in kg: ")
 
 print(int(int(weight) / (float(height) ** 2)))
 
-#Rouding numbers ------->
+#Rouding numbers ------------------------------------->
 #Number after , is the place we want to round to.
 print(round(8/3, 2))
 
 
-#Days, Weeks, Months, left to live--------->
+#Days, Weeks, Months, left to live------------------------------------->
 age = input("What is your current age? ")
 
 Years = (90 - int(age))
@@ -42,7 +42,7 @@ print("You have " + str(days) + " days, " + str(weeks) + " weeks, " + "and " + s
 print(f"You have " + {days} + " days, " + {weeks} + " weeks, " + "and " + {months} + " months left.")
  
 
- #Tip Calculator --------->
+ #Tip Calculator ------------------------------------->
 print("Welcome to the tip calculator!")
 bill = float( input( "What was the total bill? $"))
 tip = int(input("How much tip would you like to give? 10, 12, or 15? "))
@@ -54,14 +54,14 @@ bill_per_person = total_bill / people
 final_amount = round(bill_per_person, 2)
 print(final_amount)
 
-# If else Statement ----------->
+# If else Statement ------------------------------------->
 number = int(input("Which number do you want to check? "))
 if number % 2 == 0:
     print("This is an even number.")
 else:
     print("This is an odd number.")
 
-#BMI Checker(if/elif) ------->
+#BMI Checker(if/elif) ------------------------------------->
 height = float(input("enter your height in m: "))
 weight = float(input("enter your weight in kg: "))
 # 🚨 Don't change the code above 👆
@@ -77,7 +77,7 @@ elif BMI <= 35:
 elif BMI > 35:
     print(f"Your BMI is {BMI}, you are clinically obese.")
 
-# Leap year checker ---------->
+# Leap year checker ------------------------------------->
 year = int(input("Which year do you want to check? "))
 if year % 4 == 0:
     if year % 100 == 0:
@@ -90,7 +90,7 @@ if year % 4 == 0:
 else:
     print("Not leap year.")
 
-#Pizza ordering ------->
+#Pizza ordering ------------------------------------->
 print("Welcome to Python Pizza Deliveries!")
 size = input("What size pizza do you want? S, M, or L ")
 add_pepperoni = input("Do you want pepperoni? Y or N ")
@@ -116,7 +116,7 @@ if extra_cheese == "Y" or extra_cheese == "y":
 
 print(f"Your final bill is ${bill}")
 
-# Love Calculator --------->
+# Love Calculator ------------------------------------->
 print("Welcome to the Love Calculator!")
 name1 = input("What is your name? \n")
 name2 = input("What is their name? \n")
@@ -149,7 +149,7 @@ else:
 print(love_score)
 
 
-#Treasure Game ------------>
+#Treasure Game ------------------------------------->
 print('''
 *******************************************************************************
           |                   |                  |                     |
@@ -194,7 +194,7 @@ else:
     print("You fell into a hole. Game Over.")
 
 
-#Heads or Tails -------------->
+#Heads or Tails ------------------------------------->
 import random 
 
 random_num = random.randint(0,1)
@@ -203,7 +203,7 @@ if random_num == 1:
 else:
     print("Tails")
 
-#Random name picker ------------>
+#Random name picker ------------------------------------->
 import random
 # Split string method
 names_string = input("Give me everybody's names, separated by a comma. ")
@@ -216,5 +216,78 @@ random_choice = random.randint(0, num_items -1)
 person = names[random_choice]
 
 print(f"{person} is going to buy the meal today!")
+
+#X marks the spot------------------------------------->
+row1 = ["⬜️","️⬜️","️⬜️"]
+row2 = ["⬜️","⬜️","️⬜️"]
+row3 = ["⬜️️","⬜️️","⬜️️"]
+map = [row1, row2, row3]
+print(f"{row1}\n{row2}\n{row3}")
+position = input("Where do you want to put the treasure? ")
+
+H_Position = int(position[0])
+V_Position = int(position[1])
+
+selected_row = map[V_Position - 1]
+selected_row[H_Position - 1] = "X"
+#Simpler version of above............
+map[V_Position - 1][H_Position - 1] = "X"
+
+
+print(f"{row1}\n{row2}\n{row3}")
+
+#Rock, Paper, Scissors ------------------------------------->
+import random
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+game_images = [rock, paper, scissors]
+
+user_choice = int(input("What do you choose? Type 0 fo Rock, 1 for Paper, or 2 for Scissors.\n"))
+if user_choice >= 3 or user_choice < 0:
+    print("You typed and invalid number! You Lose!")
+else:
+    print(game_images[user_choice])
+
+computer_choice = random.randint(0,2)
+print("Computer chose:")
+print(game_images[computer_choice])
+
+
+if user_choice == 0 and computer_choice == 2:
+    print("You win!")
+elif computer_choice == 0 and user_choice == 2:
+    print("You lose!")
+elif user_choice > computer_choice:
+    print("You win!")
+elif computer_choice > user_choice:
+    print("You lose!")
+elif computer_choice == user_choice:
+    print("it's a draw!")
+
 
 
