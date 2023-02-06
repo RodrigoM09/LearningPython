@@ -1,5 +1,5 @@
 #String length ------------------------------------->
-print(len(input("What is your name? ")))
+print(len(input("What is your name? \n")))
 
 name = input("What is your name? ")
 length = len(name)
@@ -13,14 +13,14 @@ pet = input("What's your pets name?\n")
 bandname = print(city + pet)
 
 #Adding 2 numbers from same input ------------------------------------->
-two_digit_number = input("Type a two digit number: ")
+two_digit_number = input("Type a two digit number: \n")
 
 print(int(two_digit_number[0]) + int(two_digit_number[1]))
 
 
 #BMI Calculator ------------------------------------->
-height = input("enter your height in m: ")
-weight = input("enter your weight in kg: ")
+height = input("enter your height in m: \n")
+weight = input("enter your weight in kg: \n")
 
 print(int(int(weight) / (float(height) ** 2)))
 
@@ -30,7 +30,7 @@ print(round(8/3, 2))
 
 
 #Days, Weeks, Months, left to live------------------------------------->
-age = input("What is your current age? ")
+age = input("What is your current age? \n")
 
 Years = (90 - int(age))
 months = (Years * 12)
@@ -38,15 +38,15 @@ weeks = (Years * 52)
 days = (Years * 365)
 
 
-print("You have " + str(days) + " days, " + str(weeks) + " weeks, " + "and " + str(months) + " months left.")
-print(f"You have " + {days} + " days, " + {weeks} + " weeks, " + "and " + {months} + " months left.")
+print("You have " + str(days) + " days, " + str(weeks) + " weeks, " + "and " + str(months) + " months left.\n")
+print(f'You have " + {days} + " days, " + {weeks} + " weeks, " + "and " + {months} + " months left.\n')
  
 
  #Tip Calculator ------------------------------------->
 print("Welcome to the tip calculator!")
-bill = float( input( "What was the total bill? $"))
-tip = int(input("How much tip would you like to give? 10, 12, or 15? "))
-people = int(input("How many people to split the bill?"))
+bill = float( input( "What was the total bill? \n$"))
+tip = int(input("How much tip would you like to give? 10, 12, or 15? \n"))
+people = int(input("How many people to split the bill?\n"))
 tip_as_percent = tip / 100
 total_tip_amount = bill * tip_as_percent
 total_bill = bill + total_tip_amount
@@ -55,15 +55,15 @@ final_amount = round(bill_per_person, 2)
 print(final_amount)
 
 # If else Statement ------------------------------------->
-number = int(input("Which number do you want to check? "))
+number = int(float(input("Which number do you want to check? \n")))
 if number % 2 == 0:
-    print("This is an even number.")
+    print("This is an even number.\n")
 else:
-    print("This is an odd number.")
+    print("This is an odd number.\n")
 
 #BMI Checker(if/elif) ------------------------------------->
-height = float(input("enter your height in m: "))
-weight = float(input("enter your weight in kg: "))
+height = float(input("enter your height in m: \n"))
+weight = float(input("enter your weight in kg: \n"))
 # 🚨 Don't change the code above 👆
 BMI = round(weight / height ** 2)
 if BMI <= 18.5:
@@ -78,7 +78,7 @@ elif BMI > 35:
     print(f"Your BMI is {BMI}, you are clinically obese.")
 
 # Leap year checker ------------------------------------->
-year = int(input("Which year do you want to check? "))
+year = int(input("Which year do you want to check? \n"))
 if year % 4 == 0:
     if year % 100 == 0:
         if year % 400 ==0:
@@ -92,9 +92,9 @@ else:
 
 #Pizza ordering ------------------------------------->
 print("Welcome to Python Pizza Deliveries!")
-size = input("What size pizza do you want? S, M, or L ")
-add_pepperoni = input("Do you want pepperoni? Y or N ")
-extra_cheese = input("Do you want extra cheese? Y or N ")
+size = input("What size pizza do you want? S, M, or L \n")
+add_pepperoni = input("Do you want pepperoni? Y or N \n")
+extra_cheese = input("Do you want extra cheese? Y or N \n")
 
 bill = 0
 
@@ -175,7 +175,7 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.") 
 
-choice1 = input('You\'re at a crossroad, where do you want to go? Type "left" or "right".').lower()
+choice1 = input('You\'re at a crossroad, where do you want to go? Type "left" or "right".\n').lower()
 if choice1 == "left":
     choice2 = input('You\'ve come to a lake, there is a island in the middle of the lake. Type "wait" to wait for a boat. Type "swim" to swim across\n').lower()
     if choice2 == "wait":
