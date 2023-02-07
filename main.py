@@ -298,17 +298,49 @@ student_heights = input("Input a list of student heights ").split()
 for n in range(0, len(student_heights)):
     student_heights[n] = int(student_heights[n])
 
-
-#Write your code below this row 👇
 TOTAL_HEIGHT = 0
 for height in student_heights:
     TOTAL_HEIGHT += height
-# print(total_height)
 
 TOTAL_STUDENTS = 0
 for student in student_heights:
     TOTAL_STUDENTS += 1
-# print(total_students)
 
 average = round(TOTAL_HEIGHT / TOTAL_STUDENTS)
 print(average)
+
+#Highest Score ---------------------------------->
+student_scores = input("Input a list of student scores ").split()
+
+for n in range(0, len(student_scores)):
+  student_scores[n] = int(student_scores[n])
+print(student_scores)
+
+HIGH_SCORE = 0
+for score in student_scores:
+    if score > HIGH_SCORE:
+        HIGH_SCORE = score
+print(f"The highest score in the class is: {HIGH_SCORE}")
+
+#Calculate total of all even numbers 1 to 100------------------------->
+TOTAL = 0
+for number in range(1, 101):
+    if number % 2 == 0:
+        TOTAL += number
+print(TOTAL)
+#SAME AS ABOVE------>
+TOTAL = 0
+for number in range(2, 101, 2):
+    TOTAL += number
+print(TOTAL)
+
+#FIZZBUZZ -------------------------------------------------------------->
+for number in range(1, 101):
+    if number % 3 == 0 and number % 5 ==0:
+        print("FizzBuzz")
+    elif number % 3 == 0:
+        print("Fizz")
+    elif number % 5 == 0:
+        print("Buzz")
+    else:
+        print(number)
