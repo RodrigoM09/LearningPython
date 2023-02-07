@@ -1,3 +1,5 @@
+"""Module providingFunction printing python version."""
+import random
 #String length ------------------------------------->
 print(len(input("What is your name? \n")))
 
@@ -40,7 +42,6 @@ days = (Years * 365)
 
 print("You have " + str(days) + " days, " + str(weeks) + " weeks, " + "and " + str(months) + " months left.\n")
 print(f'You have " + {days} + " days, " + {weeks} + " weeks, " + "and " + {months} + " months left.\n')
- 
 
  #Tip Calculator ------------------------------------->
 print("Welcome to the tip calculator!")
@@ -55,8 +56,8 @@ final_amount = round(bill_per_person, 2)
 print(final_amount)
 
 # If else Statement ------------------------------------->
-number = int(float(input("Which number do you want to check? \n")))
-if number % 2 == 0:
+NUMBER = int(float(input("Which number do you want to check? \n")))
+if NUMBER % 2 == 0:
     print("This is an even number.\n")
 else:
     print("This is an odd number.\n")
@@ -84,7 +85,7 @@ if year % 4 == 0:
         if year % 400 ==0:
             print("Leap year.")
         else:
-            print("Not a leap year.")    
+            print("Not a leap year.")
     else:
         print("Leap year.")
 else:
@@ -96,25 +97,25 @@ size = input("What size pizza do you want? S, M, or L \n")
 add_pepperoni = input("Do you want pepperoni? Y or N \n")
 extra_cheese = input("Do you want extra cheese? Y or N \n")
 
-bill = 0
+BILL = 0
 
-if size == "S" or size == "s":
-    bill += 15
-elif size == "M" or size == "m":
-    bill += 20
-elif size == "L" or  size == "l":
-    bill += 25 
+if size == ("S", "s"):
+    BILL += 15
+elif size == ("M","m"):
+    BILL += 20
+elif size == ("L","l"):
+    BILL += 25
 
-if add_pepperoni == "Y" or  add_pepperoni == "y":
-    if size == "S" or size == "s":
-        bill += 2
+if add_pepperoni == ("Y", "y"):
+    if size == ("S","s"):
+        BILL += 2
     else:
-        bill += 3 
+        BILL += 3
 
-if extra_cheese == "Y" or extra_cheese == "y":
-        bill += 1
+if extra_cheese == ("Y","y"):
+    BILL += 1
 
-print(f"Your final bill is ${bill}")
+print(f"Your final bill is ${BILL}")
 
 # Love Calculator ------------------------------------->
 print("Welcome to the Love Calculator!")
@@ -137,16 +138,16 @@ e = combined_string.count("e")
 
 love = l + o + v + e
 
-love_score = int(str(true) + str(love))
+LOVE_SCORE = int(str(true) + str(love))
 
-if (love_score < 10) or (love_score > 90):
-    print(f"Your love score is {love_score}, you go together like coke and mentos")
-elif (love_score >= 40) and (love_score <= 50):
-    print(f"Your score is {love_score}, you are alright together.")
+if (LOVE_SCORE < 10) or (LOVE_SCORE > 90):
+    print(f"Your love score is {LOVE_SCORE}, you go together like coke and mentos")
+elif (LOVE_SCORE >= 40) and (LOVE_SCORE <= 50):
+    print(f"Your score is {LOVE_SCORE}, you are alright together.")
 else:
-    print(f"Your score is {love_score}")
+    print(f"Your score is {LOVE_SCORE}")
 
-print(love_score)
+print(LOVE_SCORE)
 
 
 #Treasure Game ------------------------------------->
@@ -173,7 +174,7 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 *******************************************************************************
 ''')
 print("Welcome to Treasure Island.")
-print("Your mission is to find the treasure.") 
+print("Your mission is to find the treasure.")
 
 choice1 = input('You\'re at a crossroad, where do you want to go? Type "left" or "right".\n').lower()
 if choice1 == "left":
@@ -195,7 +196,6 @@ else:
 
 
 #Heads or Tails ------------------------------------->
-import random 
 
 random_num = random.randint(0,1)
 if random_num == 1:
@@ -204,7 +204,6 @@ else:
     print("Tails")
 
 #Random name picker ------------------------------------->
-import random
 # Split string method
 names_string = input("Give me everybody's names, separated by a comma. ")
 names = names_string.split(", ")
@@ -237,9 +236,8 @@ map[V_Position - 1][H_Position - 1] = "X"
 print(f"{row1}\n{row2}\n{row3}")
 
 #Rock, Paper, Scissors ------------------------------------->
-import random
 
-rock = '''
+ROCK = '''
     _______
 ---'   ____)
       (_____)
@@ -248,7 +246,7 @@ rock = '''
 ---.__(___)
 '''
 
-paper = '''
+PAPER = '''
     _______
 ---'   ____)____
           ______)
@@ -257,7 +255,7 @@ paper = '''
 ---.__________)
 '''
 
-scissors = '''
+SCISSORS = '''
     _______
 ---'   ____)____
           ______)
@@ -265,7 +263,7 @@ scissors = '''
       (____)
 ---.__(___)
 '''
-game_images = [rock, paper, scissors]
+game_images = [ROCK, PAPER, SCISSORS]
 
 user_choice = int(input("What do you choose? Type 0 fo Rock, 1 for Paper, or 2 for Scissors.\n"))
 if user_choice >= 3 or user_choice < 0:
@@ -290,4 +288,27 @@ elif computer_choice == user_choice:
     print("it's a draw!")
 
 
+#LOOPS ----------------------------------------------->
+fruits = ["Apple","Peach","Pear"]
+for fruit in fruits:
+    print(fruit)
 
+# Average Height using For Loops ---------------------------------------->
+student_heights = input("Input a list of student heights ").split()
+for n in range(0, len(student_heights)):
+    student_heights[n] = int(student_heights[n])
+
+
+#Write your code below this row 👇
+TOTAL_HEIGHT = 0
+for height in student_heights:
+    TOTAL_HEIGHT += height
+# print(total_height)
+
+TOTAL_STUDENTS = 0
+for student in student_heights:
+    TOTAL_STUDENTS += 1
+# print(total_students)
+
+average = round(TOTAL_HEIGHT / TOTAL_STUDENTS)
+print(average)
