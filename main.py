@@ -374,14 +374,15 @@
 
 #Hangman Game ------------------------------------------------>
 import random
-from hangman_art import stages
+from replit import clear
+from hangman_art import stages, LOGO
 from hangman_words import WORD_LIST
 
 LIVES = 6
 
 
 chosen_word = random.choice(WORD_LIST)
-
+print(LOGO)
 DISPLAY = []
 
 for letter in range(len(chosen_word)):
@@ -391,14 +392,26 @@ for letter in range(len(chosen_word)):
 END_OF_GAME = False
 
 while not END_OF_GAME:
+    #Take users input and lowercase it
     guess = input("Guess a letter:\n").lower()
 
+    #Clears the screen after every guess
+    clear()
+
+    #check if letter has already been guessed
+    if guess in DISPLAY:
+        print(f"You've already guess {guess}")
+
+    #Loop through the length of the choosen word
     for position in range(len(chosen_word)):
+        #Asign each letter a position in the array
         letter = chosen_word[position]
+        #If the guess is there asign the guess to that position
         if letter == guess:
             DISPLAY[position] = letter
-
+    #If the guess is not there, subtract a life, if there are no more lives end the game and print the correct word.
     if guess not in chosen_word:
+        print(f"You guessed {guess},that's not in the word. You lose a life!")
         LIVES -=1
         if LIVES == 0:
             END_OF_GAME = True
@@ -407,10 +420,10 @@ while not END_OF_GAME:
 
     print(f"{' '.join(DISPLAY)}")
 
-
+    #If there are no more dashes end game and print you win!
     if "_" not in DISPLAY:
         END_OF_GAME = True
         print("You Win!!")
-
+    #print the ASCII art and the number of lives
     print(stages[LIVES])
     
