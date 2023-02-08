@@ -467,4 +467,6 @@ while not END_OF_GAME:
     if "_" not in DISPLAY:
         END_OF_GAME = True
         print("You Win!!")
+
+    print(stages[LIVES])
     
