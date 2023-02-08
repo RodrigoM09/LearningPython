@@ -374,70 +374,13 @@
 
 #Hangman Game ------------------------------------------------>
 import random
-
-
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
+from hangman_art import stages
+from hangman_words import WORD_LIST
 
 LIVES = 6
 
-word_list = ["aardvark", "baboon", "camel"]
 
-chosen_word = random.choice(word_list)
+chosen_word = random.choice(WORD_LIST)
 
 DISPLAY = []
 
@@ -460,6 +403,7 @@ while not END_OF_GAME:
         if LIVES == 0:
             END_OF_GAME = True
             print("You Lose")
+            print(f"The word was {chosen_word}")
 
     print(f"{' '.join(DISPLAY)}")
 
