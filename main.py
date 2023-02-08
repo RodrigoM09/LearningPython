@@ -371,3 +371,33 @@ PASSWORD = ""
 for char in password_list:
     PASSWORD += char
 print(f"Your password is: {PASSWORD}")
+
+#Hangman Game ------------------------------------------------>
+import random
+
+word_list = ["aardvark", "baboon", "camel"]
+
+chosen_word = random.choice(word_list)
+
+DISPLAY = []
+
+for letter in range(len(chosen_word)):
+    DISPLAY += "_"
+print(DISPLAY)
+
+END_OF_GAME = False
+
+while not END_OF_GAME:
+    guess = input("Guess a letter:\n").lower()
+
+    for position in range(len(chosen_word)):
+        letter = chosen_word[position]
+        if letter == guess:
+            DISPLAY[position] = letter
+
+    print(DISPLAY)
+
+    if "_" not in DISPLAY:
+        END_OF_GAME = True
+        print("You Win!!")
+    
