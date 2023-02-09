@@ -1,4 +1,4 @@
-"""Module providingFunction printing python version."""
+"""Function printing python version."""
 import random
 import math
 # #String length ------------------------------------->
@@ -433,15 +433,29 @@ import math
 
 # greet_with_name("Rodrigo")
 
+# Area of a wall------------------------------------------------------>
 def paint_calc(height, width, cover):
+    """Function printing python version."""
+    num_of_cans = (height * width) / cover
+    round_up_cans = math.ceil(num_of_cans)
+    print(f"You'll need {round_up_cans} cans of paint")
+
     test_h = int(input("Height of wall: "))
     test_w = int(input("Width of wall: "))
     coverage = 5
-    area = height * width
-    num_of_cans = math.ceil(area / cover)
-    print(f"You'll need {num_of_cans} cans of paint")
-
     paint_calc(height=test_h, width=test_w, cover=coverage)
 
 paint_calc(5,5,5)
-    
+
+#Prime number checker -------------------------------------------------->
+def prime_checker(number):
+    """Function printing python version."""
+    is_prime = True
+    for i in range(2, number):
+        if number % i == 0:
+            is_prime = False
+    if is_prime:
+        print("It's a prime number.")
+    else:
+        print("It's not a prime number.")
+
