@@ -372,7 +372,7 @@ for char in password_list:
     PASSWORD += char
 print(f"Your password is: {PASSWORD}")
 
-#Hangman Game ------------------------------------------------>
+#Hangman Game ----------------------------------------------------------------->
 from replit import clear
 from hangman_art import stages, LOGO
 from hangman_words import WORD_LIST
@@ -425,4 +425,18 @@ while not END_OF_GAME:
         print("You Win!!")
     #print the ASCII art and the number of lives
     print(stages[LIVES])
-    
+
+#Function that allows for input
+def greet_with_name(name):
+    print(f"Hello {name}")
+
+greet_with_name("Rodrigo")
+
+def paint_calc():
+
+
+# 🚨 Don't change the code below 👇
+test_h = int(input("Height of wall: "))
+test_w = int(input("Width of wall: "))
+coverage = 5
+paint_calc(height=test_h, width=test_w, cover=coverage)
