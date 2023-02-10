@@ -434,31 +434,31 @@ from hangman_words import alphabet
 
 # greet_with_name("Rodrigo")
 
-# Area of a wall------------------------------------------------------>
-def paint_calc(height, width, cover):
-    """Function printing python version."""
-    num_of_cans = (height * width) / cover
-    round_up_cans = math.ceil(num_of_cans)
-    print(f"You'll need {round_up_cans} cans of paint")
+# # Area of a wall------------------------------------------------------>
+# def paint_calc(height, width, cover):
+#     """Function printing python version."""
+#     num_of_cans = (height * width) / cover
+#     round_up_cans = math.ceil(num_of_cans)
+#     print(f"You'll need {round_up_cans} cans of paint")
 
-    test_h = int(input("Height of wall: "))
-    test_w = int(input("Width of wall: "))
-    coverage = 5
-    paint_calc(height=test_h, width=test_w, cover=coverage)
+#     test_h = int(input("Height of wall: "))
+#     test_w = int(input("Width of wall: "))
+#     coverage = 5
+#     paint_calc(height=test_h, width=test_w, cover=coverage)
 
-paint_calc(5,5,5)
+# paint_calc(5,5,5)
 
-#Prime number checker -------------------------------------------------->
-def prime_checker(number):
-    """Function printing python version."""
-    is_prime = True
-    for i in range(2, number):
-        if number % i == 0:
-            is_prime = False
-    if is_prime:
-        print("It's a prime number.")
-    else:
-        print("It's not a prime number.")
+# #Prime number checker -------------------------------------------------->
+# def prime_checker(number):
+#     """Function printing python version."""
+#     is_prime = True
+#     for i in range(2, number):
+#         if number % i == 0:
+#             is_prime = False
+#     if is_prime:
+#         print("It's a prime number.")
+#     else:
+#         print("It's not a prime number.")
 
 #Caeser Cypher -------------------------------------------------------------->
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
@@ -467,6 +467,25 @@ shift = int(input("Type the shift number:\n"))
 
 def encrypt(plain_text, shift_amount):
     """Function printing python version."""
+    cipher_text = ""
     for letter in plain_text:
         position = alphabet.index(letter)
         new_position = position + shift_amount
+        cipher_text += alphabet[new_position]
+    print(f"The encoded text is {cipher_text}")
+
+
+def decrypt(cipher_text, shift_amount):
+    """Function printing python version."""
+    plain_text = ""
+    for letter in cipher_text:
+        position = alphabet.index(letter)
+        new_position = position - shift_amount
+        plain_text += alphabet[new_position]
+    print(f"The decoded text is {plain_text}")
+
+if direction == "encode":
+    encrypt(plain_text=text, shift_amount=shift)
+elif direction == "decode":
+    decrypt(cipher_text=text, shift_amount=shift)
+    
