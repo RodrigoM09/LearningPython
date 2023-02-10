@@ -1,6 +1,7 @@
 """Function printing python version."""
 import random
 import math
+from hangman_words import alphabet
 # #String length ------------------------------------->
 # print(len(input("What is your name? \n")))
 
@@ -459,3 +460,13 @@ def prime_checker(number):
     else:
         print("It's not a prime number.")
 
+#Caeser Cypher -------------------------------------------------------------->
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
+
+def encrypt(plain_text, shift_amount):
+    """Function printing python version."""
+    for letter in plain_text:
+        position = alphabet.index(letter)
+        new_position = position + shift_amount
