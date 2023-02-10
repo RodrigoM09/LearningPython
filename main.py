@@ -2,6 +2,7 @@
 import random
 import math
 from hangman_words import alphabet
+from hangman_art import LOGO2
 # #String length ------------------------------------->
 # print(len(input("What is your name? \n")))
 
@@ -464,6 +465,7 @@ from hangman_words import alphabet
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
+shift = shift % 26
 
 def encrypt(plain_text, shift_amount):
     """Function printing python version."""
@@ -488,4 +490,32 @@ if direction == "encode":
     encrypt(plain_text=text, shift_amount=shift)
 elif direction == "decode":
     decrypt(cipher_text=text, shift_amount=shift)
-    
+
+print(LOGO2)
+
+def caeser(start_text, shift_amount, cipher_direction):
+    """Function printing python version."""
+    end_text = ""
+    if cipher_direction == "decode":
+        shift_amount *= -1
+    for char in start_text:
+        if char in alphabet:
+            position = alphabet.index(char)
+            new_position = position + shift_amount
+            end_text += alphabet[new_position]
+        else:
+            end_text += char
+    print(f"The {cipher_direction}d result: {end_text}")
+    print("")
+
+SHOULD_CONTINUE = True
+while SHOULD_CONTINUE:
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+    shift = shift % 26
+    caeser(start_text=text,shift_amount=shift,cipher_direction=direction)
+    result = input("Type yes' if you want to go again. Otherwise type 'no'.\n")
+    if result == "no":
+        SHOULD_CONTINUE = False
+        print("GoodBye!")
