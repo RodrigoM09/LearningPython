@@ -521,31 +521,31 @@
 #         SHOULD_CONTINUE = False
 #         print("GoodBye!")
 
-#Python Dictionaries------------------------------------->
-#Create Dictionary with key value pairs........
-programming_dictionary = {
-    "Bug": "An error in a program that orevents the program from running as expected",
-    "Function": "A piece of code that you can easily call over and over again",
-    "Loop": "The action of doing something over and over again."
-}
-# Retrieve items from dictionary..........
+# #Python Dictionaries------------------------------------->
+# #Create Dictionary with key value pairs........
+# programming_dictionary = {
+#     "Bug": "An error in a program that orevents the program from running as expected",
+#     "Function": "A piece of code that you can easily call over and over again",
+#     "Loop": "The action of doing something over and over again."
+# }
+# # Retrieve items from dictionary..........
 
-print(programming_dictionary["Function"])
+# print(programming_dictionary["Function"])
 
-empty_dictionary = {}
+# empty_dictionary = {}
 
-empty_dictionary["Name"] = "Rodrigo"
-print(empty_dictionary)
+# empty_dictionary["Name"] = "Rodrigo"
+# print(empty_dictionary)
 
-#Looping through a dictionary --------------------->
-names = {
-    "first_name": "Rodrigo",
-    "second_name": "Ricardo",
-    "third_name": "David"
-}
-for name in names:
-    print(name) #Gives Key
-    print(names["first_name"]) #Gives Value
+# #Looping through a dictionary --------------------->
+# names = {
+#     "first_name": "Rodrigo",
+#     "second_name": "Ricardo",
+#     "third_name": "David"
+# }
+# for name in names:
+#     print(name) #Gives Key
+#     print(names["first_name"]) #Gives Value
 
 student_scores = {
   "Harry": 81,
@@ -554,12 +554,17 @@ student_scores = {
   "Draco": 74,
   "Neville": 62,
 }
+student_grades ={}
 
-student_grades = {
-    student_scores["Harry"],
-    student_scores["Ron"],
-    student_scores["Hermione"],
-    student_scores["Draco"],
-    student_scores["Neville"]
-}
+for student in student_scores:
+    score = student_scores[student]
+    if score > 91:
+        student_grades[student] = "Outstanding"
+    elif score > 80:
+        student_grades[student] = "Exceeds Expectations"
+    elif score > 70:
+        student_grades[student] = "Acceptable"
+    elif score > 70:
+        student_grades[student] = "Fail"    
+
 print(student_grades)
