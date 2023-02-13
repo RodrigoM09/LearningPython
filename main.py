@@ -568,3 +568,28 @@ for student in student_scores:
         student_grades[student] = "Fail"    
 
 print(student_grades)
+
+#Nesting Dictionaries------------------>
+capitals = {
+    "France":"Paris",
+    "Germany":"Berlin",
+}
+#Dictionary within Dictionary, list value, int value
+travel_log = {
+    "France": {"cities_visited": ["Paris", "Lille", "Dijon"], "total_visits: ": 12},
+    "Germany": {"cities_visited": ["Berlin", "Hamburg", "Stuttgart"], "total_visits: ": 5}
+}
+#Dictionary within a list
+travel_log = [
+    {
+        "country": "France",
+        "cities_visited": ["Paris", "Lille", "Dijon"],
+        "total_visits: ": 12
+        },
+    {
+        "country": "Germany",
+        "cities_visited": ["Berlin",
+        "Hamburg", "Stuttgart"],
+        "total_visits: ": 5
+        }
+]
