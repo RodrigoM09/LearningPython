@@ -583,13 +583,24 @@ travel_log = {
 travel_log = [
     {
         "country": "France",
-        "cities_visited": ["Paris", "Lille", "Dijon"],
-        "total_visits: ": 12
+        "visits: ": 12,
+        "cities_visited": ["Paris", "Lille", "Dijon"]
         },
     {
         "country": "Germany",
+        "visits: ": 5,
         "cities_visited": ["Berlin",
-        "Hamburg", "Stuttgart"],
-        "total_visits: ": 5
+        "Hamburg", "Stuttgart"]
         }
 ]
+
+def add_new_country(country, vists, cities_visted):
+    """Function printing python version."""
+    new_country = {}
+    new_country["country"] = country
+    new_country["vists"] = vists
+    new_country["cities_visted"] = cities_visted
+    travel_log.append(new_country)
+
+add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
+print(travel_log)
