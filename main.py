@@ -6,6 +6,7 @@ from hangman_words import alphabet
 from hangman_art import LOGO2
 from hangman_art import GAVEL
 from hangman_art import TREASURE
+from hangman_art import CALCULATOR
 
 # #String length ------------------------------------->
 # print(len(input("What is your name? \n")))
@@ -594,30 +595,103 @@ from hangman_art import TREASURE
 # add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
 # print(travel_log)
 
-#Silent Bid------------------------------------------------------->
-print("Welcome to the secret auction project.")
-print(GAVEL)
-bids = {}
-BIDDING_FINISHED = False
+# #Silent Bid------------------------------------------------------->
+# print("Welcome to the secret auction project.")
+# print(GAVEL)
+# bids = {}
+# BIDDING_FINISHED = False
 
-def find_highest_bidder(bidding_record):
+# def find_highest_bidder(bidding_record):
+#     """Function printing python version."""
+#     highest_bid = 0
+#     for bidder in bidding_record:
+#         bid_amount = bidding_record[bidder]
+#         if bid_amount > highest_bid:
+#             highest_bid = bid_amount
+#             winner = bidder
+#     print(f"The winner is {winner} with a bid of {highest_bid}")
+
+# while not BIDDING_FINISHED:
+#     name = input("What is your name?: ")
+#     bid = int(input("What is your bid?: $"))
+#     bids[name] = bid
+#     should_continue = input("Are there any other bidders? 'yes or 'no. ")
+#     if should_continue == "no":
+#         BIDDING_FINISHED = True
+#     elif should_continue == "yes":
+#         os.system('clear')
+
+# find_highest_bidder(bids)
+
+#Functions with Outputs---------------------------------------------->
+def format_name(f_name,l_name):
     """Function printing python version."""
-    highest_bid = 0
-    for bidder in bidding_record:
-        bid_amount = bidding_record[bidder]
-        if bid_amount > highest_bid:
-            highest_bid = bid_amount
-            winner = bidder
-    print(f"The winner is {winner} with a bid of {highest_bid}")
+    full_name = f_name.title() +", "+ l_name.title()
+    return f"{full_name}"
 
-while not BIDDING_FINISHED:
-    name = input("What is your name?: ")
-    bid = int(input("What is your bid?: $"))
-    bids[name] = bid
-    should_continue = input("Are there any other bidders? 'yes or 'no. ")
-    if should_continue == "no":
-        BIDDING_FINISHED = True
-    elif should_continue == "yes":
-        os.system('clear')
+formatted_String = format_name("rodrigo", "marquez")
+print(formatted_String)
+print(format_name("rodrigo", "marquez"))
 
-find_highest_bidder(bids)
+print(format_name(input("What is your first name?"),input("What's your last name? ")))
+
+# Leap year and month checker ------------------------------------->
+def is_leap(year):
+    """Function printing python version."""
+    if year % 4 == 0:
+        if year % 100 == 0:
+            if year % 400 ==0:
+                return True
+            else:
+                return False
+        else:
+            return True
+    else:
+        return False
+
+def days_in_month(year, month):
+    """Checks year for leap and month for number of days."""
+    month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    if is_leap(year) and month == 2:
+        return 29
+    return month_days[month - 1]
+
+year = int(input("Enter a year: "))
+month = int(input("Enter a month: "))
+days = days_in_month(year, month)
+print(days)
+
+#Calculator App--------------------------------------->
+#Add
+def add(n_one, n_two):
+    """Add"""
+    return n_one + n_two
+#Subtract
+def subtract(n_one, n_two):
+    """Subtract"""
+    return n_one - n_two
+#Multiply
+def multiply(n_one, n_two):
+    """Subtract"""
+    return n_one * n_two
+#Divide
+def divide(n_one, n_two):
+    """Subtract"""
+    return n_one / n_two
+
+operations = {
+    "+": add,
+    "-": subtract,
+    "*": multiply,
+    "/": divide
+}
+
+num1 = int(input("Whats the first number?: "))
+for symbol in operations:
+    print(symbol)
+operation_symbol = input("Pick an operation from the line above: ")
+num2 = int(input("Whats the second number?: "))
+calculation_function = operations[operation_symbol]
+answer = calculation_function(num1, num2)
+
+print(f"{num1} {operation_symbol} {num2} = {answer}")
