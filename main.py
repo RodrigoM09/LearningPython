@@ -623,43 +623,43 @@ from hangman_art import CALCULATOR
 
 # find_highest_bidder(bids)
 
-#Functions with Outputs---------------------------------------------->
-def format_name(f_name,l_name):
-    """Function printing python version."""
-    full_name = f_name.title() +", "+ l_name.title()
-    return f"{full_name}"
+# #Functions with Outputs---------------------------------------------->
+# def format_name(f_name,l_name):
+#     """Function printing python version."""
+#     full_name = f_name.title() +", "+ l_name.title()
+#     return f"{full_name}"
 
-formatted_String = format_name("rodrigo", "marquez")
-print(formatted_String)
-print(format_name("rodrigo", "marquez"))
+# formatted_String = format_name("rodrigo", "marquez")
+# print(formatted_String)
+# print(format_name("rodrigo", "marquez"))
 
-print(format_name(input("What is your first name?"),input("What's your last name? ")))
+# print(format_name(input("What is your first name?"),input("What's your last name? ")))
 
-# Leap year and month checker ------------------------------------->
-def is_leap(year):
-    """Function printing python version."""
-    if year % 4 == 0:
-        if year % 100 == 0:
-            if year % 400 ==0:
-                return True
-            else:
-                return False
-        else:
-            return True
-    else:
-        return False
+# # Leap year and month checker ------------------------------------->
+# def is_leap(year):
+#     """Function printing python version."""
+#     if year % 4 == 0:
+#         if year % 100 == 0:
+#             if year % 400 ==0:
+#                 return True
+#             else:
+#                 return False
+#         else:
+#             return True
+#     else:
+#         return False
 
-def days_in_month(year, month):
-    """Checks year for leap and month for number of days."""
-    month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-    if is_leap(year) and month == 2:
-        return 29
-    return month_days[month - 1]
+# def days_in_month(year, month):
+#     """Checks year for leap and month for number of days."""
+#     month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+#     if is_leap(year) and month == 2:
+#         return 29
+#     return month_days[month - 1]
 
-year = int(input("Enter a year: "))
-month = int(input("Enter a month: "))
-days = days_in_month(year, month)
-print(days)
+# year = int(input("Enter a year: "))
+# month = int(input("Enter a month: "))
+# days = days_in_month(year, month)
+# print(days)
 
 #Calculator App--------------------------------------->
 #Add
@@ -672,11 +672,11 @@ def subtract(n_one, n_two):
     return n_one - n_two
 #Multiply
 def multiply(n_one, n_two):
-    """Subtract"""
+    """Multiply"""
     return n_one * n_two
 #Divide
 def divide(n_one, n_two):
-    """Subtract"""
+    """Divide"""
     return n_one / n_two
 
 operations = {
@@ -692,6 +692,13 @@ for symbol in operations:
 operation_symbol = input("Pick an operation from the line above: ")
 num2 = int(input("Whats the second number?: "))
 calculation_function = operations[operation_symbol]
-answer = calculation_function(num1, num2)
+first_answer = calculation_function(num1, num2)
 
-print(f"{num1} {operation_symbol} {num2} = {answer}")
+print(f"{num1} {operation_symbol} {num2} = {first_answer}")
+
+operation_symbol = input("Pick another operation: ")
+num3 = int(input("What's the next number?: "))
+calculation_function = operations[operation_symbol]
+second_answer = calculation_function(calculation_function(num1, num2), num3)
+
+print(f"{first_answer} {operation_symbol} {num3} = {second_answer}")
