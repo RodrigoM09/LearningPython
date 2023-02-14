@@ -7,6 +7,7 @@ from hangman_art import LOGO2
 from hangman_art import GAVEL
 from hangman_art import TREASURE
 from hangman_art import CALCULATOR
+from hangman_art import BLACKJACK
 
 # #String length ------------------------------------->
 # print(len(input("What is your name? \n")))
@@ -661,50 +662,86 @@ from hangman_art import CALCULATOR
 # days = days_in_month(year, month)
 # print(days)
 
-#Calculator App--------------------------------------->
-#Add
-def add(n_one, n_two):
-    """Add"""
-    return n_one + n_two
-#Subtract
-def subtract(n_one, n_two):
-    """Subtract"""
-    return n_one - n_two
-#Multiply
-def multiply(n_one, n_two):
-    """Multiply"""
-    return n_one * n_two
-#Divide
-def divide(n_one, n_two):
-    """Divide"""
-    return n_one / n_two
+# #Calculator App--------------------------------------->
+# #Add
+# def add(n_one, n_two):
+#     """Add"""
+#     return n_one + n_two
+# #Subtract
+# def subtract(n_one, n_two):
+#     """Subtract"""
+#     return n_one - n_two
+# #Multiply
+# def multiply(n_one, n_two):
+#     """Multiply"""
+#     return n_one * n_two
+# #Divide
+# def divide(n_one, n_two):
+#     """Divide"""
+#     return n_one / n_two
 
-operations = {
-    "+": add,
-    "-": subtract,
-    "*": multiply,
-    "/": divide
-}
+# operations = {
+#     "+": add,
+#     "-": subtract,
+#     "*": multiply,
+#     "/": divide
+# }
 
-def calculator():
-    """Calculator app"""
-    num1 = int(input("Whats the first number?: "))
-    for symbol in operations:
-        print(symbol)
-    should_continue = True
+# def calculator():
+#     """Calculator app"""
+#     print(CALCULATOR)
+#     num1 = float(input("Whats the first number?: "))
+#     for symbol in operations:
+#         print(symbol)
+#     should_continue = True
 
-    while should_continue:
-        operation_symbol = input("Pick an operation: ")
-        num2 = int(input("Whats the next number?: "))
-        calculation_function = operations[operation_symbol]
-        answer = calculation_function(num1, num2)
+#     while should_continue:
+#         operation_symbol = input("Pick an operation: ")
+#         num2 = float(input("Whats the next number?: "))
+#         calculation_function = operations[operation_symbol]
+#         answer = calculation_function(num1, num2)
 
-        print(f"{num1} {operation_symbol} {num2} = {answer}")
+#         print(f"{num1} {operation_symbol} {num2} = {answer}")
 
-        if input(f"Type 'y' to continue calculating with {answer} or type 'n' to exit.: ") == "y":
-            num1 = answer
-        else:
-            should_continue = False
-            calculator()
+#         if input(f"Type 'y' to continue calculating with {answer} or type 'n' to exit.: ") == "y":
+#             num1 = answer
+#         else:
+#             should_continue = False
+#             calculator()
 
-calculator()
+# calculator()
+
+#BlackJack----------------------------------------------------------------------->
+
+print(BLACKJACK)
+def deal_card():
+    """Returns a random card from the deck"""
+    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+    card = random.choice(cards)
+    return card
+
+def calculate_score(cards):
+    """Take a list of cards and return the score calculated from the cards"""
+    if sum(cards) == 21 and len(cards) == 2:
+        return 0
+    if 11 in cards and sum(cards) > 21:
+        cards.remove(11)
+        cards.append(1)
+
+    return sum(cards)
+
+#Create 2 empty lists for each player----------->
+user_cards = []
+computer_cards = []
+IS_GAME_OVER = False
+
+#Return 2 random cards---------------->
+for _ in range(2):
+    user_cards.append(deal_card())
+    computer_cards.append(deal_card())
+
+user_score = calculate_score(user_cards)
+computer_score = calculate_score(computer_cards)
+
+if user_score == 0 or computer_score == 0 or user_score > 21:
+    IS_GAME_OVER = True
